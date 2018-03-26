@@ -21,4 +21,13 @@ def str_to_qrl(s):
     url = 'data:image/png;base64,{}'.format(b64)
     return url
 
-webbrowser.open(str_to_qrl('ac6y'))
+# nested qrl
+qrl = str_to_qrl('ac6y')
+qrlqrl = str_to_qrl(qrl)
+
+webbrowser.open(qrlqrl)
+
+# self encoding
+me = open(__file__,'rb').read()
+meqrl = str_to_qrl(me)
+webbrowser.open(meqrl)
